@@ -1,0 +1,214 @@
+body {
+  background-image: url(https://www.exploratorium.edu/sites/default/files/images/NASA-Clouds.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Times New Roman", Times, serif;
+}
+h1 {
+  color: #010101;
+  font-size: 80px;
+  text-align: center;
+  font-weight: 700;
+  font-family: roboto;
+  text-align: center;
+  margin-top: -10px;
+}
+h1:hover {
+  color: #70110f;
+}
+h2 {
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+h2:hover {
+  color: #70110f;
+}
+h3,
+h4 {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 800;
+}
+p {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+}
+.search-field {
+  width: 30%;
+  margin-left: 450px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 10px 35px 10px 15px;
+  border: solid #3e7bb4;
+  border-width: 5px;
+  border-radius: 100px;
+}
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -40px;
+}
+
+.search-button img {
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.fa-solid {
+  color: #70110f;
+  opacity: 0.8;
+}
+.yourLocation {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: #70110f;
+  color: #fff;
+}
+.yourLocation:hover {
+  background-color: #fff;
+  color: #70110f;
+  box-shadow: 3px 3px#92a3b7;
+  transition: all 200ms ease-in-out;
+}
+.row {
+  background: #9ebed7;
+  text-align: center;
+  opacity: 0.7;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  outline: solid #3e7bb4;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  padding: 15px 25px;
+}
+.row:hover {
+  box-shadow: 15px 10px #92a3b7;
+  transition: all 200ms ease-in-out;
+  background: #ede7c3;
+}
+.max {
+  font-size: 20px;
+  font-weight: 900;
+}
+.max:hover {
+  color: #70110f;
+}
+.coder:hover {
+  color: #70110f;
+  font-weight: 900;
+  transition: all 200ms ease-in;
+  background-color: #3e7bb4;
+}
+#last-update {
+  text-align: center;
+  color: #010101;
+  font-size: 10px;
+}
+#last-update:hover{
+  color: #70110f;
+  text-decoration: dotted underline;
+}
+#full-date {
+  color: #010101;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-family: roboto;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+#full-date:hover {
+  color: #70110f;
+  text-decoration: dotted underline;
+  font-size:20px;
+}
+#today-date {
+  color: #010101;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-family: roboto;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: -15px;
+}
+#today-date:hover {
+  color: #70110f;
+  text-decoration: dotted underline;
+  font-size:20px;
+}
+#conversion {
+  display: block;
+  margin-left: 718px;
+  margin-top: 0;
+  color: #010101;
+  font-size: 20px;
+}
+.active:hover{
+  font-size: 25px;
+  cursor:default;
+}
+#celsius,#fahrenheit{
+color: #70110f;
+font-weight:900;
+text-decoration:none;
+}
+#humidity,
+#wind {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 900;
+}
+#humidity:hover {
+  color: #70110f;
+   font-size:20px;
+}
+#wind:hover {
+  color: #70110f;
+   font-size:20px;
+}
+#weather-description {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 40px;
+  color: #010101;
+  font-weight: 900;
+}
+#weather-description:hover {
+  color: #70110f;
+}
+#weather-icon{
+  display:block;
+  margin:0 auto;
+  width:200px;
+  margin-bottom:0;
+  margin-top:5px;
+}
