@@ -29,7 +29,7 @@ let hour = now.getHours();
 let minutes = now.getMinutes();
 let lastUpdate = document.querySelector("#full-date");
 lastUpdate.innerHTML = `${day} ${now.getDate()}${month} ${now.getFullYear()}`;
-todayDate.innerHTML = `${day} ${hour}:${minutes}`;
+todayDate.innerHTML = `GMT: ${hour}:${minutes}`;
 if (hour < 10) {
   todayDate.innerHTML = `GMT: 0${hour}:${minutes}`;
 }
