@@ -91,7 +91,7 @@ p {
   box-shadow: 3px 3px#92a3b7;
   transition: all 200ms ease-in-out;
 }
-.row {
+.today-weather-forecast,.weekly-weather-forecast {
   background: #9ebed7;
   text-align: center;
   opacity: 0.7;
@@ -100,20 +100,37 @@ p {
   outline: solid #3e7bb4;
   margin-left: 30%;
   margin-right: 30%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border-radius: 5px;
   padding: 15px 25px;
 }
-.row:hover {
+.today-weather-forecast:hover {
+  color:#FFFFED;
   box-shadow: 15px 10px #92a3b7;
   transition: all 200ms ease-in-out;
-  background: #ede7c3;
+  background: #000213;
+}
+.weekly-weather-forecast:hover{
+   color:#FFFFED;
+  box-shadow: 15px 10px #92a3b7;
+  transition: all 200ms ease-in-out;
+  background:  #000213;
 }
 .max {
   font-size: 20px;
   font-weight: 900;
 }
 .max:hover {
+  font-size:25px;
+  color: #70110f;
+}
+.min{
+  font-size: 15px;
+  font-weight:700;
+}
+.min:hover{
+  font-size:20px;
+  font-weight: 900;
   color: #70110f;
 }
 .coder:hover {
