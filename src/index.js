@@ -29,7 +29,7 @@ let hour = now.getHours();
 let minutes = now.getMinutes();
 let lastUpdate = document.querySelector("#full-date");
 lastUpdate.innerHTML = `${day} ${now.getDate()}${month} ${now.getFullYear()}`;
-todayDate.innerHTML = `GMT: ${hour}:${minutes}`;
+todayDate.innerHTML = `${day} ${hour}:${minutes}`;
 if (hour < 10) {
   todayDate.innerHTML = `GMT: 0${hour}:${minutes}`;
 }
@@ -69,24 +69,26 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-degrees");
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
+
+function displayFahrenheitTemp(event){
+    event.preventDefault();
+    let temperatureElement=document.querySelector("#temperature-degrees");
+    let fahrenheitTemp=(celsiusTemperature * 9)/5+32;
+    temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
 }
 
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-degrees");
-  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+function displayCelsiusTemp(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature-degrees");
+    temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
-let celsiusTemp = null;
+let celsiusTemp=null;
 
 let searchForm = document.querySelector("#nav-bar");
 searchForm.addEventListener("submit", handleSubmit);
 
-let fahrenheitTempLink = document.querySelector("#fahrenheit");
+
+let fahrenheitTempLink=document.querySelector("#fahrenheit");
 fahrenheitTempLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusTempLink = document.querySelector("#celsius");
