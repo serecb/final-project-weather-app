@@ -37,6 +37,27 @@ if (minutes < 10) {
   todayDate.innerHTML = `GMT: ${hour}:0${minutes}`;
 }
 
+function displayDailyForecast(){
+  let dailyForecastElement=document.querySelector("#daily-forecast");
+  let dayParts=["Morning","Afternoon","Evening","Overnight"];
+  dayParts.forEach(function(part){
+let dailyForecastHTML =`<div class="row" id="daily-forecast">
+   <div class="col-3">Morning</div> 
+  <div class="col-3">Afternoon</div>
+  <div class="col-3">Evening</div>
+  <div class="col-3">Overnight</div>
+  <div class="col-3">🌧️</div>
+  <div class="col-3">🌧️</div>
+  <div class="col-3">🌧️</div>
+  <div class="col-3">🌥️</div>
+  <div class="col-3"><span class="max">19°</span></div>
+  <div class="col-3"><span class="max">19°</span></div>
+  <div class="col-3"><span class="max">19°</span></div>
+  <div class="col-3"><span class="max">16°</span></div>
+</div>`});
+  dailyForecastElement.innerHTML=dailyForecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature-degrees");
   let cityElement = document.querySelector("#city");
