@@ -21,7 +21,7 @@ let months = [
   "Sept",
   "Oct",
   "Nov",
-  "Dec",
+  "Dec"
 ];
 let month = months[now.getMonth()];
 let day = days[now.getDay()];
@@ -29,13 +29,52 @@ let hour = now.getHours();
 let minutes = now.getMinutes();
 let lastUpdate = document.querySelector("#full-date");
 lastUpdate.innerHTML = `${day} ${now.getDate()}${month} ${now.getFullYear()}`;
-todayDate.innerHTML = `${day} ${hour}:${minutes}`;
+todayDate.innerHTML = `GMT: ${hour}:${minutes}`;
 if (hour < 10) {
   todayDate.innerHTML = `GMT: 0${hour}:${minutes}`;
 }
 if (minutes < 10) {
   todayDate.innerHTML = `GMT: ${hour}:0${minutes}`;
 }
+
+
+function displayTodayForecast() {
+  let todayForecastElement = document.querySelector("#daily-forecast");
+  let dayPart = ["Morning", "Afternoon", "Evening", "Overnight"];
+  let todayForecastHTML = `<div class="row">`;
+  dayPart.forEach(function (part) {
+    todayForecastHTML =
+      todayForecastHTML +
+      `<div class="col-3">
+   <div class="today-part-forecast">${part}</div>
+   <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="scattered-clouds" width="40"/>
+    <div class="max">18°C
+  </div>
+  </div>`;
+  });
+  todayForecastHTML = todayForecastHTML + `</div>`;
+  todayForecastElement.innerHTML = todayForecastHTML;
+}
+
+function displayWeeklyForecast(){
+  let weeklyForecastElement = document.querySelector("#weekly-weather-forecast");
+  let weekDay=["Sun","Mon","Tue","Wed","Thur","Fri"];
+  let weeklyForecastHTML=`<div class="row">`;
+  weekDay.forEach(function(day){
+  weeklyForecastHTML=weeklyForecastHTML+`
+  <div class="col-2">
+  <div class="forecastDay">${day}</div>
+  <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="scattered-clouds" width="40"/>
+   <div class="weekly-forecast-temperatures">
+  <span class="max"> 18°C</span>
+  <span class="min">12°C</span>
+  </div>
+  </div>`});
+  weeklyForecastHTML=weeklyForecastHTML+`</div>`;
+  weeklyForecastElement.innerHTML=weeklyForecastHTML;
+}
+
+
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature-degrees");
@@ -69,32 +108,32 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-
-function displayFahrenheitTemp(event){
-    event.preventDefault();
-    let temperatureElement=document.querySelector("#temperature-degrees");
-    let fahrenheitTemp=(celsiusTemperature * 9)/5+32;
-    temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-degrees");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
 }
 
-function displayCelsiusTemp(event){
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature-degrees");
-    temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-degrees");
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
-let celsiusTemp=null;
+let celsiusTemp = null;
 
 let searchForm = document.querySelector("#nav-bar");
 searchForm.addEventListener("submit", handleSubmit);
 
-
-let fahrenheitTempLink=document.querySelector("#fahrenheit");
+let fahrenheitTempLink = document.querySelector("#fahrenheit");
 fahrenheitTempLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusTempLink = document.querySelector("#celsius");
 celsiusTempLink.addEventListener("click", displayCelsiusTemp);
 
 search("Madrid");
+displayTodayForecast();
+displayWeeklyForecast();
 
 function showPosition(position) {
   let apiKey = "5faa50e274cdcc1720b61bb86d2823360";
@@ -121,4 +160,3 @@ function getYourLocation(event) {
 let locationButton = document.querySelector(".yourLocation");
 locationButton.addEventListener("click", getYourLocation);
 navigator.geolocation.getCurrentPosition(retrievePosition);
-
