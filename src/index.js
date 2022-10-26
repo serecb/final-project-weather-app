@@ -37,15 +37,15 @@ if (minutes < 10) {
   todayDate.innerHTML = `GMT: ${hour}:0${minutes}`;
 }
 
-function displayDailyForecast(){
-  let dailyForecastElement=document.querySelector("#daily-forecast");
-  let dayParts=["Morning","Afternoon","Evening","Overnight"];
-  dayParts.forEach(function(part){
-let dailyForecastHTML =`<div class="row" id="daily-forecast">
-   <div class="col-3">Morning</div> 
-  <div class="col-3">Afternoon</div>
-  <div class="col-3">Evening</div>
-  <div class="col-3">Overnight</div>
+function displayDailyForecast() {
+  let dailyForecastElement = document.querySelector("#daily-forecast");
+  let dailyForecastHTML = `<div class="row" id="daily-forecast">`;
+  let dayParts = ["Morning", "Afternoon", "Evening", "Overnight"];
+  dayParts.forEach(function (part) {
+    dailyForecastHTML =
+      dailyForecastHTML +
+      `
+   <div class="col-3">${part}</div> 
   <div class="col-3">🌧️</div>
   <div class="col-3">🌧️</div>
   <div class="col-3">🌧️</div>
@@ -54,8 +54,9 @@ let dailyForecastHTML =`<div class="row" id="daily-forecast">
   <div class="col-3"><span class="max">19°</span></div>
   <div class="col-3"><span class="max">19°</span></div>
   <div class="col-3"><span class="max">16°</span></div>
-</div>`});
-  dailyForecastElement.innerHTML=dailyForecastHTML;
+</div>`;
+  });
+  dailyForecastElement.innerHTML = dailyForecastHTML;
 }
 
 function displayTemperature(response) {
@@ -90,26 +91,24 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-
-function displayFahrenheitTemp(event){
-    event.preventDefault();
-    let temperatureElement=document.querySelector("#temperature-degrees");
-    let fahrenheitTemp=(celsiusTemperature * 9)/5+32;
-    temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-degrees");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
 }
 
-function displayCelsiusTemp(event){
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature-degrees");
-    temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-degrees");
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
-let celsiusTemp=null;
+let celsiusTemp = null;
 
 let searchForm = document.querySelector("#nav-bar");
 searchForm.addEventListener("submit", handleSubmit);
 
-
-let fahrenheitTempLink=document.querySelector("#fahrenheit");
+let fahrenheitTempLink = document.querySelector("#fahrenheit");
 fahrenheitTempLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusTempLink = document.querySelector("#celsius");
