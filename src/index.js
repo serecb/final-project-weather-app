@@ -21,7 +21,7 @@ let months = [
   "Sept",
   "Oct",
   "Nov",
-  "Dec"
+  "Dec",
 ];
 let month = months[now.getMonth()];
 let day = days[now.getDay()];
@@ -37,16 +37,15 @@ if (minutes < 10) {
   todayDate.innerHTML = `GMT: ${hour}:0${minutes}`;
 }
 
-
 function displayTodayForecast() {
   let todayForecastElement = document.querySelector("#daily-forecast");
-  let dayPart = ["Morning", "Afternoon", "Evening", "Overnight"];
+  let dayHour = ["10:00", "13:00", "16:00", "19:00", "21:00", "23:00"];
   let todayForecastHTML = `<div class="row">`;
-  dayPart.forEach(function (part) {
+  dayHour.forEach(function (hour) {
     todayForecastHTML =
       todayForecastHTML +
-      `<div class="col-3">
-   <div class="today-part-forecast">${part}</div>
+      `<div class="col-2">
+   <div class="today-part-forecast">${hour}</div>
    <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="scattered-clouds" width="40"/>
     <div class="max">18°C
   </div>
@@ -56,12 +55,17 @@ function displayTodayForecast() {
   todayForecastElement.innerHTML = todayForecastHTML;
 }
 
-function displayWeeklyForecast(){
-  let weeklyForecastElement = document.querySelector("#weekly-weather-forecast");
-  let weekDay=["Sun","Mon","Tue","Wed","Thur","Fri"];
-  let weeklyForecastHTML=`<div class="row">`;
-  weekDay.forEach(function(day){
-  weeklyForecastHTML=weeklyForecastHTML+`
+function displayWeeklyForecast(response) {
+  console.log(response.data.daily);
+  let weeklyForecastElement = document.querySelector(
+    "#weekly-weather-forecast"
+  );
+  let weekDay = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+  let weeklyForecastHTML = `<div class="row">`;
+  weekDay.forEach(function (day) {
+    weeklyForecastHTML =
+      weeklyForecastHTML +
+      `
   <div class="col-2">
   <div class="forecastDay">${day}</div>
   <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="scattered-clouds" width="40"/>
@@ -69,12 +73,17 @@ function displayWeeklyForecast(){
   <span class="max"> 18°C</span>
   <span class="min">12°C</span>
   </div>
-  </div>`});
-  weeklyForecastHTML=weeklyForecastHTML+`</div>`;
-  weeklyForecastElement.innerHTML=weeklyForecastHTML;
+  </div>`;
+  });
+  weeklyForecastHTML = weeklyForecastHTML + `</div>`;
+  weeklyForecastElement.innerHTML = weeklyForecastHTML;
 }
 
-
+function getWeeklyForecast(coordinates) {
+  let apiKey = "faa50e274cdcc1720b61bb86d2823360";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayWeeklyForecast);
+}
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature-degrees");
@@ -94,6 +103,7 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getWeeklyForecast(response.data.coord);
 }
 
 function search(city) {
@@ -133,7 +143,6 @@ celsiusTempLink.addEventListener("click", displayCelsiusTemp);
 
 search("Madrid");
 displayTodayForecast();
-displayWeeklyForecast();
 
 function showPosition(position) {
   let apiKey = "5faa50e274cdcc1720b61bb86d2823360";
