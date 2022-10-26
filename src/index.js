@@ -119,3 +119,4 @@ function getYourLocation(event) {
 let locationButton = document.querySelector(".yourLocation");
 locationButton.addEventListener("click", getYourLocation);
 navigator.geolocation.getCurrentPosition(retrievePosition);
+
