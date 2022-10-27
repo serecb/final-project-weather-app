@@ -62,8 +62,8 @@ function displayWeeklyForecast(response) {
     forecastDay.weather[0].icon
   }@2x.png" alt="scattered-clouds" width="40"/>
    <div class="weekly-forecast-temperatures">
-  <span class="max">${Math.round(forecastDay.temp.max)}°/</span>
-  <span class="min">${Math.round(forecastDay.temp.min)}°</span>
+  <span class="max">${Math.round(forecastDay.temp.max)}°C/</span>
+  <span class="min">${Math.round(forecastDay.temp.min)}°C</span>
   </div>
   </div>`;
     }
