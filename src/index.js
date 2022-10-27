@@ -37,6 +37,15 @@ if (minutes < 10) {
   todayDate.innerHTML = `GMT: ${hour}:0${minutes}`;
 }
 
+function formatDay(timeStamp){
+  let date=new Date(timeStamp * 1000);
+  let day=date.getDay();
+  let days=["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
+
+  return days[day];
+
+}
+
 function displayTodayForecast() {
   let todayForecastElement = document.querySelector("#daily-forecast");
   let dayHour = ["10:00", "13:00", "16:00", "19:00", "21:00", "23:00"];
@@ -56,23 +65,26 @@ function displayTodayForecast() {
 }
 
 function displayWeeklyForecast(response) {
+  let weeklyForecast=response.data.daily;
   let weeklyForecastElement = document.querySelector(
     "#weekly-weather-forecast"
   );
-  let weekDay = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
   let weeklyForecastHTML = `<div class="row">`;
-  weekDay.forEach(function (day) {
+  weeklyForecast.forEach(function (forecastDay,index) {
+    if(index<6){
     weeklyForecastHTML =
       weeklyForecastHTML +
       `
-  <div class="col-2">
-  <div class="forecastDay">${day}</div>
-  <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="scattered-clouds" width="40"/>
+  <div class="col">
+  <div class="forecastDay">${formatDay(forecastDay.dt)}</div>
+  <img src="https://openweathermap.org/img/wn/${
+    forecastDay.weather[0].icon
+  }@2x.png" alt="scattered-clouds" width="40"/>
    <div class="weekly-forecast-temperatures">
-  <span class="max"> 18°C</span>
-  <span class="min">12°C</span>
+  <span class="max">${Math.round(forecastDay.temp.max)}°/</span>
+  <span class="min">${Math.round(forecastDay.temp.min)}°</span>
   </div>
-  </div>`;
+  </div>`;}
   });
   weeklyForecastHTML = weeklyForecastHTML + `</div>`;
   weeklyForecastElement.innerHTML = weeklyForecastHTML;
