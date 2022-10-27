@@ -108,7 +108,6 @@ function formatHour(timeStamp) {
   return hours[hour];
 }
 function displayTodayForecast(response) {
-  console.log(response.data.hourly[0]);
   let todayForecastElement = document.querySelector("#daily-forecast");
   let todayForecast = response.data.hourly;
   let todayForecastHTML = `<div class="row">`;
