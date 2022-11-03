@@ -56,12 +56,16 @@ p {
   border: solid #3e7bb4;
   border-width: 5px;
   border-radius: 100px;
+  display: flex;
+  justify-content: center;
 }
 .search-button {
   background: transparent;
   border: none;
   outline: none;
   margin-left: -40px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-button img {
