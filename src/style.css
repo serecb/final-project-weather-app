@@ -45,7 +45,7 @@ p {
 }
 .form {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 .search-field {
   width: 30%;
@@ -56,24 +56,18 @@ p {
   border: solid #3e7bb4;
   border-width: 5px;
   border-radius: 100px;
-  display: flex;
-  justify-content: center;
 }
 .search-button {
   background: transparent;
   border: none;
   outline: none;
   margin-left: -40px;
-  display: flex;
-  justify-content: center;
 }
 
 .search-button img {
   width: 18px;
   height: 18px;
   object-fit: cover;
-  display: flex;
-  justify-content: center;
 }
 .fa-solid {
   color: #70110f;
