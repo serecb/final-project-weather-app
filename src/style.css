@@ -45,7 +45,7 @@ p {
 }
 .form {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
 }
 .search-field {
   width: 30%;
@@ -68,6 +68,8 @@ p {
   width: 18px;
   height: 18px;
   object-fit: cover;
+  display: flex;
+  justify-content: center;
 }
 .fa-solid {
   color: #70110f;
@@ -91,8 +93,9 @@ p {
   box-shadow: 3px 3px#92a3b7;
   transition: all 200ms ease-in-out;
 }
-.today-weather-forecast,.weekly-weather-forecast {
-  width:800px;
+.today-weather-forecast,
+.weekly-weather-forecast {
+  width: 800px;
   background: #9ebed7;
   text-align: center;
   opacity: 0.7;
@@ -104,33 +107,35 @@ p {
   margin-bottom: 30px;
   border-radius: 5px;
   padding: 30px 25px;
+  display: flex;
+  justify-content: center;
 }
 .today-weather-forecast:hover {
-  color:#FFFFED;
+  color: #ffffed;
   box-shadow: 15px 10px #92a3b7;
   transition: all 200ms ease-in-out;
   background: #000213;
 }
-.weekly-weather-forecast:hover{
-   color:#FFFFED;
+.weekly-weather-forecast:hover {
+  color: #ffffed;
   box-shadow: 15px 10px #92a3b7;
   transition: all 200ms ease-in-out;
-  background:  #000213;
+  background: #000213;
 }
 .max {
   font-size: 20px;
   font-weight: 900;
 }
 .max:hover {
-  font-size:25px;
+  font-size: 25px;
   color: #70110f;
 }
-.min{
+.min {
   font-size: 15px;
-  font-weight:700;
+  font-weight: 700;
 }
-.min:hover{
-  font-size:20px;
+.min:hover {
+  font-size: 20px;
   font-weight: 900;
   color: #70110f;
 }
@@ -145,7 +150,7 @@ p {
   color: #010101;
   font-size: 10px;
 }
-#last-update:hover{
+#last-update:hover {
   color: #70110f;
   text-decoration: dotted underline;
 }
@@ -162,7 +167,7 @@ p {
 #full-date:hover {
   color: #70110f;
   text-decoration: dotted underline;
-  font-size:20px;
+  font-size: 20px;
 }
 #today-date {
   color: #010101;
@@ -177,7 +182,7 @@ p {
 #today-date:hover {
   color: #70110f;
   text-decoration: dotted underline;
-  font-size:20px;
+  font-size: 20px;
 }
 #conversion {
   display: block;
@@ -186,14 +191,15 @@ p {
   color: #010101;
   font-size: 20px;
 }
-.active:hover{
+.active:hover {
   font-size: 25px;
-  cursor:default;
+  cursor: default;
 }
-#celsius,#fahrenheit{
-color: #70110f;
-font-weight:900;
-text-decoration:none;
+#celsius,
+#fahrenheit {
+  color: #70110f;
+  font-weight: 900;
+  text-decoration: none;
 }
 #humidity,
 #wind {
@@ -205,11 +211,11 @@ text-decoration:none;
 }
 #humidity:hover {
   color: #70110f;
-   font-size:20px;
+  font-size: 20px;
 }
 #wind:hover {
   color: #70110f;
-   font-size:20px;
+  font-size: 20px;
 }
 #weather-description {
   text-align: center;
@@ -223,10 +229,10 @@ text-decoration:none;
 #weather-description:hover {
   color: #70110f;
 }
-#weather-icon{
-  display:block;
-  margin:0 auto;
-  width:200px;
-  margin-bottom:0;
-  margin-top:5px;
+#weather-icon {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  margin-bottom: 0;
+  margin-top: 5px;
 }
