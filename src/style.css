@@ -106,7 +106,7 @@ p {
   border-radius: 5px;
   padding: 30px 25px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .today-weather-forecast:hover {
   color: #ffffed;
