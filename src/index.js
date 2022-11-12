@@ -71,7 +71,7 @@ function displayWeeklyForecast(response) {
   weeklyForecastElement.innerHTML = weeklyForecastHTML;
 }
 function getWeeklyForecast(coordinates) {
-  let apiKey = "faa50e274cdcc1720b61bb86d2823360";
+  let apiKey = "0264d06982177bca550db925824523d8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeeklyForecast);
 }
@@ -110,6 +110,7 @@ function formatHour(timeStamp) {
 function displayTodayForecast(response) {
   let todayForecastElement = document.querySelector("#daily-forecast");
   let todayForecast = response.data.hourly;
+  console.log(responsa.data.hourly);
   let todayForecastHTML = `<div class="row">`;
   todayForecast.forEach(function (todayForecastHour, index) {
     if (index < 24) {
@@ -131,7 +132,7 @@ function displayTodayForecast(response) {
 }
 
 function getTodayForecast(coordinates) {
-  let apiKey = "faa50e274cdcc1720b61bb86d2823360";
+  let apiKey = "0264d06982177bca550db925824523d8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTodayForecast);
 }
@@ -159,7 +160,7 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "faa50e274cdcc1720b61bb86d2823360";
+  let apiKey = "0264d06982177bca550db925824523d8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -196,7 +197,7 @@ celsiusTempLink.addEventListener("click", displayCelsiusTemp);
 search("Madrid");
 
 function showPosition(position) {
-  let apiKey = "5faa50e274cdcc1720b61bb86d2823360";
+  let apiKey = "0264d06982177bca550db925824523d8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={position.coords.latitude}&lon={position.coords.longitude}&appid=${apiKey}`;
 }
 
@@ -205,7 +206,7 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 function retrievePosition(position) {
-  let apiKey = "faa50e274cdcc1720b61bb86d2823360";
+  let apiKey = "0264d06982177bca550db925824523d8";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
