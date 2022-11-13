@@ -80,16 +80,11 @@ p {
 #weekly-weather-forecast {
   width: 800px;
   background: #9ebed7;
-  text-align: center;
   opacity: 0.7;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
   outline: solid #3e7bb4;
-  margin-left: 25%;
-  margin-right: 30%;
-  margin-bottom: 30px;
   border-radius: 5px;
-  padding: 30px 25px;
 }
 #daily-forecast:hover {
   color: #ffffed;
