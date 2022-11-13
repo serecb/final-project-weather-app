@@ -30,19 +30,21 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container-fluid text-center mb-3">
+    <div class="container-fluid text-center">
       <form id="nav-bar">
         <input
           type="search"
           placeholder="Search city"
-          class="search-field"
+          class="search-field pt-2 pb-2 mt-3 mb-3 text-center"
           id="search-bar"
         />
         <button type="submit" class="search-button">
           <img src="images/magnifying glass.jpg" alt="magnifying-glass" />
         </button>
         <br />
-        <button type="submit" class="yourLocation">Current📍</button>
+        <button type="submit" class="yourLocation pt-3 pb-3 ps-3 pe-3 mb-4">
+          Current📍
+        </button>
       </form>
       <div class="text-center" id="last-update">Last update on:</div>
       <div class="text-center" id="full-date"></div>

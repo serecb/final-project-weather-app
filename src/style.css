@@ -40,13 +40,8 @@ p {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 15px;
 }
-.form {
-  display: flex;
-  flex-direction: row;
-}
 .search-field {
   width: 40%;
-  padding: 10px 35px 10px 15px;
   border: solid #3e7bb4;
   border-width: 5px;
   border-radius: 100px;
@@ -68,11 +63,7 @@ p {
   opacity: 0.8;
 }
 .yourLocation {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   font-family: "Times New Roman", Times, serif;
   font-size: 10px;
   font-weight: 700;
